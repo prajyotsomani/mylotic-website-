@@ -119,7 +119,7 @@ export const headerNavigation: HeaderNavigation = {
   ],
   cta: {
     title: "Start a conversation",
-    href: "/contact",
+    href: "/contact#contact-form",
   },
 };
 

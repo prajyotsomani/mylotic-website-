@@ -32,7 +32,7 @@ export function CTASection() {
 
             {/* Primary & Secondary Action Buttons with Micro-interactions */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-10">
-              <Link to="/contact" className="w-full sm:w-auto group">
+              <Link to="/contact#contact-form" className="w-full sm:w-auto group">
                 <button
                   type="button"
                   className="w-full sm:w-auto px-8 py-4 rounded-lg bg-[#171A17] hover:bg-[#242622] text-[#F7F5EF] font-mono text-xs sm:text-sm uppercase tracking-wider font-semibold flex items-center justify-center gap-2 transition-all active:scale-[0.98] shadow-xs cursor-pointer"

@@ -9,6 +9,7 @@ export function ContactForm() {
   const [formData, setFormData] = React.useState({
     fullName: "",
     workEmail: "",
+    phone: "",
     companyName: "",
     practiceArea: "ai",
     projectScope: "",
@@ -35,6 +36,7 @@ export function ContactForm() {
         const emailRes = await sendEmailViaEmailJS({
           fullName: formData.fullName.trim(),
           email: formData.workEmail.trim(),
+          phone: formData.phone.trim() || undefined,
           company: formData.companyName.trim() || undefined,
           service: formData.practiceArea,
           message: formData.projectScope.trim(),
@@ -61,6 +63,7 @@ export function ContactForm() {
         body: JSON.stringify({
           fullName: formData.fullName.trim(),
           email: formData.workEmail.trim(),
+          phone: formData.phone.trim() || undefined,
           company: formData.companyName.trim() || undefined,
           service: formData.practiceArea,
           message: formData.projectScope.trim(),
@@ -106,7 +109,7 @@ export function ContactForm() {
           Your architectural inquiry has been routed to our technical leadership team. We will review your project parameters and respond within 1 business day.
         </p>
 
-        <div className="p-4 rounded-2xl bg-[#F0F4F8] border border-[#E1E7EF] max-w-sm mx-auto text-xs font-mono text-[#5F6872] mb-6 space-y-1 text-left">
+        <div className="p-4 rounded-2xl bg-[#F0F4F8] border border-[#E1E7EF] max-w-sm mx-auto text-xs font-mono text-[#5F6872] mb-6 space-y-1.5 text-left">
           <div className="flex justify-between">
             <span>Primary Contact:</span>
             <span className="text-[#101418] font-semibold">{formData.fullName}</span>
@@ -115,6 +118,12 @@ export function ContactForm() {
             <span>Direct Email:</span>
             <span className="text-[#66705A] font-semibold">{formData.workEmail}</span>
           </div>
+          {formData.phone && (
+            <div className="flex justify-between">
+              <span>Phone:</span>
+              <span className="text-[#101418] font-semibold">{formData.phone}</span>
+            </div>
+          )}
         </div>
 
         <button
@@ -124,6 +133,7 @@ export function ContactForm() {
             setFormData({
               fullName: "",
               workEmail: "",
+              phone: "",
               companyName: "",
               practiceArea: "ai",
               projectScope: "",
@@ -182,6 +192,21 @@ export function ContactForm() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {/* Phone Number */}
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="contactPhone" className="text-xs font-mono uppercase tracking-wider text-[#101418] font-semibold">
+            Phone Number
+          </label>
+          <input
+            id="contactPhone"
+            type="tel"
+            placeholder="+1 (555) 000-0000"
+            value={formData.phone}
+            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            className="w-full px-4 py-3 rounded-xl bg-[#F0F4F8] border border-[#E1E7EF] text-[#101418] placeholder:text-[#7A8490] text-xs sm:text-sm focus:outline-none focus:border-[#66705A] transition-colors"
+          />
+        </div>
+
         {/* Company Name */}
         <div className="flex flex-col gap-1.5">
           <label htmlFor="companyName" className="text-xs font-mono uppercase tracking-wider text-[#101418] font-semibold">
@@ -196,26 +221,26 @@ export function ContactForm() {
             className="w-full px-4 py-3 rounded-xl bg-[#F0F4F8] border border-[#E1E7EF] text-[#101418] placeholder:text-[#7A8490] text-xs sm:text-sm focus:outline-none focus:border-[#66705A] transition-colors"
           />
         </div>
+      </div>
 
-        {/* Practice Area */}
-        <div className="flex flex-col gap-1.5">
-          <label htmlFor="practiceArea" className="text-xs font-mono uppercase tracking-wider text-[#101418] font-semibold">
-            Practice Interest
-          </label>
-          <select
-            id="practiceArea"
-            value={formData.practiceArea}
-            onChange={(e) => setFormData({ ...formData, practiceArea: e.target.value })}
-            className="w-full px-3.5 py-3 rounded-xl bg-[#F0F4F8] border border-[#E1E7EF] text-[#101418] text-xs sm:text-sm focus:outline-none focus:border-[#66705A] transition-colors cursor-pointer font-mono"
-          >
-            <option value="ai">AI &amp; Intelligent Systems</option>
-            <option value="software-engineering">Software Engineering</option>
-            <option value="digital-transformation">Cloud &amp; Modernization</option>
-            <option value="staffing">Technical Staffing Pods</option>
-            <option value="managed-services">Managed Services &amp; SLA</option>
-            <option value="edtech-training">EdTech &amp; Corporate Training</option>
-          </select>
-        </div>
+      {/* Practice Area */}
+      <div className="flex flex-col gap-1.5">
+        <label htmlFor="practiceArea" className="text-xs font-mono uppercase tracking-wider text-[#101418] font-semibold">
+          Practice Interest
+        </label>
+        <select
+          id="practiceArea"
+          value={formData.practiceArea}
+          onChange={(e) => setFormData({ ...formData, practiceArea: e.target.value })}
+          className="w-full px-3.5 py-3 rounded-xl bg-[#F0F4F8] border border-[#E1E7EF] text-[#101418] text-xs sm:text-sm focus:outline-none focus:border-[#66705A] transition-colors cursor-pointer font-mono"
+        >
+          <option value="ai">AI &amp; Intelligent Systems</option>
+          <option value="software-engineering">Software Engineering</option>
+          <option value="digital-transformation">Cloud &amp; Modernization</option>
+          <option value="staffing">Technical Staffing Pods</option>
+          <option value="managed-services">Managed Services &amp; SLA</option>
+          <option value="edtech-training">EdTech &amp; Corporate Training</option>
+        </select>
       </div>
 
       {/* Project Scope / Description */}

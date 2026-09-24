@@ -43,7 +43,7 @@ export function Header() {
 
           {/* Right: CTA & Mobile Drawer Toggle */}
           <div className="flex items-center gap-3 shrink-0">
-            <Link to="/contact" className="hidden md:inline-flex group">
+            <Link to="/contact#contact-form" className="hidden md:inline-flex group">
               <button
                 type="button"
                 className="px-4 xl:px-5 py-2.5 rounded-xl bg-[#D9F1FF]/75 hover:bg-white/90 border border-white/60 active:scale-[0.98] text-[#123650] font-mono text-[11px] xl:text-xs uppercase tracking-wider font-semibold flex items-center gap-2 transition-all duration-200 shadow-sm cursor-pointer whitespace-nowrap backdrop-blur-md"

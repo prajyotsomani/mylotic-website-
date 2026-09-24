@@ -36,7 +36,7 @@ export function RelatedContent({
             </h3>
           </div>
           <Link
-            to="/contact"
+            to="/contact#contact-form"
             className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider font-semibold text-[#171A17] hover:text-[#66705A] transition-colors"
           >
             <span>Start a conversation</span>

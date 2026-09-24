@@ -1,3 +1,5 @@
+import * as React from "react";
+import { useLocation } from "react-router-dom";
 import { Mail, MapPin, ShieldCheck, Clock } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -6,6 +8,20 @@ import { ContactForm } from "./contact-form";
 import { companyData } from "@/data/company";
 
 export function ContactPage() {
+  const { hash } = useLocation();
+
+  React.useEffect(() => {
+    if (hash === "#contact-form" || hash === "#conversation-form" || hash === "#contact-section" || hash === "#form-section") {
+      const el = document.getElementById("contact-form");
+      if (el) {
+        const timer = setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 80);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [hash]);
+
   return (
     <>
       {/* 01 Bento Contact Hero */}
@@ -87,7 +103,7 @@ export function ContactPage() {
       </Section>
 
       {/* 02 Contact Form & Verified Direct Channels Grid */}
-      <Section spacing="spacious" className="bg-[#7CC7EA] text-[#101418] pb-16 sm:pb-24">
+      <Section id="contact-form" spacing="spacious" className="bg-[#7CC7EA] text-[#101418] pb-16 sm:pb-24 scroll-mt-24">
         <Container size="default">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* Left Column: Direct Verified Channels & Response Standards (Span 5) */}
@@ -166,7 +182,7 @@ export function ContactPage() {
             </div>
 
             {/* Right Column: Interactive Inquiry Form Bento Container (Span 7) */}
-            <div className="lg:col-span-7 bg-white rounded-3xl border border-[#E1E7EF] p-8 sm:p-12 shadow-bento">
+            <div id="contact-form-card" className="lg:col-span-7 bg-white rounded-3xl border border-[#E1E7EF] p-8 sm:p-12 shadow-bento scroll-mt-28">
               <span className="font-mono text-xs uppercase tracking-widest text-[#66705A] font-semibold block mb-2">
                 PROJECT CONSULTATION INTAKE
               </span>
@@ -183,3 +199,4 @@ export function ContactPage() {
 }
 
 export default ContactPage;
+

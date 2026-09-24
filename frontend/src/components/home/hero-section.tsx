@@ -56,7 +56,7 @@ export function HeroSection() {
             {/* 4. Action Gateways (Dual Enterprise CTAs) */}
             <div className="mt-7 sm:mt-9 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto relative z-30 animate-fade-up delay-200">
               <Link
-                to="/contact"
+                to="/contact#contact-form"
                 className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-xl bg-gradient-to-b from-[#0F2742] to-[#0A1A2D] px-6 sm:px-7 py-3.5 text-xs sm:text-sm font-mono font-semibold uppercase tracking-wider text-white border border-[#16385C] shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_8px_20px_rgba(10,26,45,0.22)] transition-all duration-200 hover:-translate-y-0.5 hover:from-[#153457] hover:to-[#0C2138] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.24),0_12px_28px_rgba(10,26,45,0.3)] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F2742]"
               >
                 <span>START A CONVERSATION</span>

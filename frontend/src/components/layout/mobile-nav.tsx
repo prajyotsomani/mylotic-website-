@@ -213,7 +213,7 @@ export function MobileNav() {
 
           {/* Footer inside drawer with Action Button */}
           <div className="pt-5 border-t border-slate-100 flex flex-col gap-3">
-            <Link to="/contact" onClick={closeMenu} className="w-full">
+            <Link to="/contact#contact-form" onClick={closeMenu} className="w-full">
               <button
                 type="button"
                 className="w-full py-3.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-mono text-xs uppercase tracking-wider font-semibold flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-md"
