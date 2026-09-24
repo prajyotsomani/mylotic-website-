@@ -11,6 +11,8 @@ export const companyData: CompanyInfo = {
   description:
     "Mylotic Group Private Limited is an Indian enterprise technology and business solutions organization based in Gurugram, Haryana. The company partners with forward-thinking organizations to build scalable digital architectures, implement AI-driven automation, and deploy high-performing engineering teams.",
   email: "contact@myloticgroup.com",
+  hrEmail: "hr@myloticgroup.com",
+  phone: "+91 9896484992",
   website: "https://myloticgroup.com",
   locations: [
     {

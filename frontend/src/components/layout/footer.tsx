@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/container";
 import { BrandLogo } from "./brand-logo";
 import { companyData } from "@/data/company";
 import { footerNavigation } from "@/data/navigation";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 function LinkedInIcon({ className }: { className?: string }) {
   return (
@@ -78,6 +78,24 @@ export function Footer() {
                 <span className="text-[#E8E6DE] leading-tight">
                   Gurugram, Haryana, India
                 </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-[#C5A880] shrink-0" />
+                <a
+                  href="tel:+919896484992"
+                  className="text-[#E8E6DE] hover:text-white transition-colors"
+                >
+                  +91 9896484992
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5 text-[#C5A880] shrink-0" />
+                <a
+                  href="mailto:hr@myloticgroup.com"
+                  className="text-[#E8E6DE] hover:text-white transition-colors"
+                >
+                  hr@myloticgroup.com
+                </a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-[#C5A880] shrink-0" />

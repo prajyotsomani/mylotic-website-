@@ -30,6 +30,8 @@ export interface CompanyInfo {
   summary: string;
   description: string;
   email: string;
+  hrEmail?: string;
+  phone?: string;
   website: string;
   locations: OfficeLocation[];
   leadership: LeadershipMember[];
